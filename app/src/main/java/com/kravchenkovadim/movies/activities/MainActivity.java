@@ -68,14 +68,16 @@ public class MainActivity extends AppCompatActivity {
                     for(int i =0; i<jsonArray.length();i++){
                         JSONObject jsonObject1 = jsonArray.getJSONObject(i);
 
-                        String title = jsonObject.getString("Title");
-                        String year = jsonObject.getString("Year");
-                        String posterUrl = jsonObject.getString("Poster");
+                        String title = jsonObject1.getString("Title");
+                        String year = jsonObject1.getString("Year");
+                        String posterUrl = jsonObject1.getString("Poster");
 
                         Movie movie = new Movie();
                         movie.setTitle(title);
                         movie.setYear(year);
                         movie.setPosterUrl(posterUrl);
+
+                        movies.add(movie);
                     }
 
                     movieAdapter = new MovieAdapter(MainActivity.this, movies);
